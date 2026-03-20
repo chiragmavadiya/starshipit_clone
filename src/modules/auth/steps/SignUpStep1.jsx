@@ -2,6 +2,12 @@ import { Checkbox, Col, Form, Input, Row, Select } from 'antd'
 import FormDivider from '../../../components/FormDivider.jsx'
 import RecaptchaPlaceholder from '../../../components/RecaptchaPlaceholder.jsx'
 import { COUNTRY_OPTIONS } from '../../../helpers/countries.js'
+import {
+  emailFieldRules,
+  nameFieldRules,
+  passwordFieldRules,
+  phoneFieldRules,
+} from '../../../helpers/signupValidation.js'
 import styles from '../SignUpPage.module.css'
 
 function GoogleWideButton({ onClick }) {
@@ -45,7 +51,7 @@ export default function SignUpStep1({ onGoogleClick }) {
             label="First name"
             name="firstName"
             preserve
-            rules={[{ required: true, message: 'Enter first name' }]}
+            rules={nameFieldRules('first name')}
           >
             <Input size="large" placeholder="First name" />
           </Form.Item>
@@ -55,22 +61,14 @@ export default function SignUpStep1({ onGoogleClick }) {
             label="Last name"
             name="lastName"
             preserve
-            rules={[{ required: true, message: 'Enter last name' }]}
+            rules={nameFieldRules('last name')}
           >
             <Input size="large" placeholder="Last name" />
           </Form.Item>
         </Col>
       </Row>
 
-      <Form.Item
-        label="Email address"
-        name="email"
-        preserve
-        rules={[
-          { required: true, message: 'Enter email' },
-          { type: 'email', message: 'Invalid email' },
-        ]}
-      >
+      <Form.Item label="Email address" name="email" preserve rules={emailFieldRules}>
         <Input size="large" placeholder="Email address" />
       </Form.Item>
 
@@ -98,12 +96,7 @@ export default function SignUpStep1({ onGoogleClick }) {
           </Form.Item>
         </Col>
         <Col xs={24} sm={12}>
-          <Form.Item
-            label="Phone number"
-            name="phone"
-            preserve
-            rules={[{ required: true, message: 'Enter phone number' }]}
-          >
+          <Form.Item label="Phone number" name="phone" preserve rules={phoneFieldRules}>
             <Input size="large" placeholder="Phone number" />
           </Form.Item>
         </Col>
@@ -111,12 +104,7 @@ export default function SignUpStep1({ onGoogleClick }) {
 
       <Row gutter={16}>
         <Col xs={24} sm={12}>
-          <Form.Item
-            label="Password"
-            name="password"
-            preserve
-            rules={[{ required: true, message: 'Enter password' }]}
-          >
+          <Form.Item label="Password" name="password" preserve rules={passwordFieldRules}>
             <Input.Password size="large" placeholder="Enter your password" />
           </Form.Item>
         </Col>

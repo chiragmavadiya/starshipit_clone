@@ -3,7 +3,6 @@ import { Button, Checkbox, Form, Input, message } from 'antd'
 import BrandLogo from '../../components/BrandLogo.jsx'
 import FormDivider from '../../components/FormDivider.jsx'
 import SocialCircleButtons from '../../components/SocialCircleButtons.jsx'
-import CopyrightFooter from '../../layouts/CopyrightFooter.jsx'
 import { ROUTES } from '../../configuration/routes.js'
 import { isAuthenticated, signIn } from './authService.js'
 import styles from './SignInPage.module.css'
@@ -85,7 +84,6 @@ export default function SignInPage() {
         </div>
       </div>
 
-      <CopyrightFooter />
     </div>
   )
 }

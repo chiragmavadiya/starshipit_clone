@@ -4,6 +4,7 @@ import {
   MONTHLY_VOLUME_OPTIONS,
   PLATFORM_OPTIONS,
 } from '../../../helpers/signupOptions.js'
+import { optionalStoreUrlRules } from '../../../helpers/signupValidation.js'
 import styles from '../SignUpPage.module.css'
 
 export default function SignUpStep2() {
@@ -22,7 +23,13 @@ export default function SignUpStep2() {
         />
       </Form.Item>
 
-      <Form.Item label="Store URL (optional)" name="storeUrl" preserve>
+      <Form.Item
+        label="Store URL (optional)"
+        name="storeUrl"
+        preserve
+        rules={optionalStoreUrlRules}
+        extra="e.g. https://mystore.com or mystore.com"
+      >
         <Input size="large" placeholder="https://" />
       </Form.Item>
 

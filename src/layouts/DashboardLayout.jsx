@@ -1,145 +1,18 @@
-import { useState } from 'react'
-import { Outlet, useNavigate } from 'react-router-dom'
-import { Layout, Menu, Button, Input, Space, Typography } from 'antd'
-import {
-  MenuFoldOutlined,
-  MenuUnfoldOutlined,
-  RocketOutlined,
-  ShoppingOutlined,
-  SearchOutlined,
-  ApartmentOutlined,
-  FileTextOutlined,
-  CarOutlined,
-  BarChartOutlined,
-  LineChartOutlined,
-  AppstoreOutlined,
-  ContactsOutlined,
-  HomeOutlined,
-  SettingOutlined,
-  CloseCircleFilled,
-} from '@ant-design/icons'
+import { Outlet } from 'react-router-dom'
+import {  Layout } from 'antd'
 import styles from './DashboardLayout.module.css'
-import BrandLogo from '../components/BrandLogo'
-import { ROUTES } from '../configuration/routes.js'
-import { clearAuthenticatedSession } from '../modules/auth/authService.js'
-import { STATUS_COUNTS } from '../modules/dashboard/mockOrders'
-
-const { Text } = Typography;
-
-const menuItems = [
-  { key: 'start', icon: <RocketOutlined />, label: 'Getting started' },
-  { key: 'orders', icon: <ShoppingOutlined />, label: 'Orders' },
-  { key: 'search', icon: <SearchOutlined />, label: 'Search' },
-  { key: 'workflows', icon: <ApartmentOutlined />, label: 'Workflows' },
-  { key: 'manifests', icon: <FileTextOutlined />, label: 'Manifests' },
-  { key: 'pickups', icon: <CarOutlined />, label: 'Pickups' },
-  { key: 'reports', icon: <BarChartOutlined />, label: 'Reports' },
-  {
-    key: 'analytics',
-    icon: <LineChartOutlined />,
-    label: 'Analytics',
-    children: [{ key: 'analytics-overview', label: 'Overview' }],
-  },
-  { key: 'products', icon: <AppstoreOutlined />, label: 'Products' },
-  { key: 'address', icon: <ContactsOutlined />, label: 'Address book' },
-  { key: 'warehouse', icon: <HomeOutlined />, label: 'Warehouse' },
-  {
-    key: 'settings',
-    icon: <SettingOutlined />,
-    label: 'Settings',
-    children: [{ key: 'settings-general', label: 'General' }],
-  },
-]
-
-const STATUS_KEYS = [
-  { key: 'new', label: 'New', count: STATUS_COUNTS.new },
-  { key: 'printed', label: 'Printed', count: STATUS_COUNTS.printed },
-  { key: 'shipped', label: 'Shipped', count: STATUS_COUNTS.shipped },
-  { key: 'archived', label: 'Archived', count: STATUS_COUNTS.archived },
-]
+import Sidebar from './Sidebar.jsx'
+import Topbar from './Topbar.jsx'
 
 export default function DashboardLayout() {
-  const navigate = useNavigate()
-  const [collapsed, setCollapsed] = useState(false)
-  const [statusTab, setStatusTab] = useState('new')
-
-  const handleLogout = () => {
-    clearAuthenticatedSession()
-    navigate(ROUTES.signIn, { replace: true })
-  }
-
 
   return (
     <Layout className={styles.root}>
-      <Layout.Sider
-        theme="light"
-        collapsible
-        collapsed={collapsed}
-        onCollapse={setCollapsed}
-        trigger={null}
-        width={252}
-        collapsedWidth={72}
-        className={styles.sider}
-      >
-        <div className={styles.siderHead}>
-          <Button
-            type="text"
-            className={styles.trigger}
-            aria-label={collapsed ? 'Expand menu' : 'Collapse menu'}
-            icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
-            onClick={() => setCollapsed((c) => !c)}
-          />
-        </div>
-        <Menu
-          mode="inline"
-          selectedKeys={['orders']}
-          defaultOpenKeys={['analytics', 'settings']}
-          inlineCollapsed={collapsed}
-          items={menuItems}
-          className={styles.menu}
-        />
-      </Layout.Sider>
+      <Sidebar />
       <Layout className={styles.inner}>
         <Layout.Content className={styles.content}>
-          <header className={styles.topBar}>
-            <div className={styles.topBarLeft}>
-              <BrandLogo size="md" className={styles.headerLogo} />
-            </div>
-            <nav className={styles.statusNav} aria-label="Order status">
-              {STATUS_KEYS.map(({ key, label, count }) => (
-                <button
-                  key={key}
-                  type="button"
-                  className={key === statusTab ? styles.statusPillActive : styles.statusPill}
-                  onClick={() => setStatusTab(key)}
-                >
-                  <span>{label}</span>
-                  <span className={key === statusTab ? styles.countChipActive : styles.countChip}>{count}</span>
-                </button>
-              ))}
-            </nav>
-            <div className={styles.topBarRight}>
-              <Input
-                className={styles.headerSearch}
-                placeholder="Search"
-                prefix={<SearchOutlined className={styles.searchIcon} />}
-                allowClear
-              />
-              <Space className={styles.userBlock} size={10}>
-                <Button
-                  type="text"
-                  className={styles.logoutBtn}
-                  aria-label="Log out"
-                  icon={<CloseCircleFilled className={styles.userAlert} aria-hidden />}
-                  onClick={handleLogout}
-                />
-                <Text ellipsis className={styles.userEmail}>
-                  tushar@chipsairex.com
-                </Text>
-              </Space>
-            </div>
-          </header>
-
+        
+          <Topbar />
           <Outlet />
         </Layout.Content>
       </Layout>

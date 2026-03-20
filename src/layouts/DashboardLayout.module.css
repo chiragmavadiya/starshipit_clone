@@ -53,6 +53,8 @@
 
 .content {
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .topBar {
@@ -152,27 +154,38 @@
 }
 
 .userBlock {
-  max-width: 220px;
+  max-width: none;
 }
 
-.logoutBtn {
-  width: 32px;
-  height: 32px;
+.userMenuTrigger {
+  width: 40px;
+  height: 40px;
   padding: 0;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  border-radius: 8px;
 }
 
-.userAlert {
-  color: #ff4d4f;
-  font-size: 18px;
-  flex-shrink: 0;
+.userMenuTrigger:hover {
+  background: rgba(0, 0, 0, 0.04);
 }
 
-.userEmail {
-  font-size: 13px;
+.userMenuIcon {
+  font-size: 20px;
+  color: #595959;
+}
+
+.userPopover {
+  min-width: 200px;
+  padding: 4px 0 0;
+}
+
+.userPopoverName {
+  font-size: 14px;
+  font-weight: 500;
   color: #262626;
-  max-width: 180px;
+  padding: 0 4px 12px;
+  word-break: break-word;
 }

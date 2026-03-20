@@ -8,15 +8,18 @@ export function isAuthenticated() {
 }
 
 /** @param {boolean} [remember=true] */
-export function setAuthenticatedSession(remember = true) {
+export function setAuthenticatedSession(data) {
   clearAuthenticatedSession()
-  const storage = remember ? localStorage : sessionStorage
+  const storage = !!data.remember ? localStorage : sessionStorage
   storage.setItem(AUTH_KEY, '1')
+  storage.setItem('username',data.username)
 }
 
 export function clearAuthenticatedSession() {
   localStorage.removeItem(AUTH_KEY)
+  localStorage.removeItem('username')
   sessionStorage.removeItem(AUTH_KEY)
+  sessionStorage.removeItem('username')
 }
 
 /**
@@ -24,8 +27,9 @@ export function clearAuthenticatedSession() {
  * @param {{ username: string; password: string; remember?: boolean }} payload
  */
 export async function signIn(payload) {
+  console.log(payload, 'payload...');
   await new Promise((r) => setTimeout(r, 400))
-  setAuthenticatedSession(payload.remember !== false)
+  setAuthenticatedSession(payload)
   return { ok: true }
 }
 
