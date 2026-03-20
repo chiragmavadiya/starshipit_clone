@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Outlet } from 'react-router-dom'
+import { Outlet, useNavigate } from 'react-router-dom'
 import { Layout, Menu, Button, Input, Space, Typography } from 'antd'
 import {
   MenuFoldOutlined,
@@ -20,6 +20,8 @@ import {
 } from '@ant-design/icons'
 import styles from './DashboardLayout.module.css'
 import BrandLogo from '../components/BrandLogo'
+import { ROUTES } from '../configuration/routes.js'
+import { clearAuthenticatedSession } from '../modules/auth/authService.js'
 import { STATUS_COUNTS } from '../modules/dashboard/mockOrders'
 
 const { Text } = Typography;
@@ -57,8 +59,14 @@ const STATUS_KEYS = [
 ]
 
 export default function DashboardLayout() {
+  const navigate = useNavigate()
   const [collapsed, setCollapsed] = useState(false)
   const [statusTab, setStatusTab] = useState('new')
+
+  const handleLogout = () => {
+    clearAuthenticatedSession()
+    navigate(ROUTES.signIn, { replace: true })
+  }
 
 
   return (
@@ -118,7 +126,13 @@ export default function DashboardLayout() {
                 allowClear
               />
               <Space className={styles.userBlock} size={10}>
-                <CloseCircleFilled className={styles.userAlert} aria-hidden />
+                <Button
+                  type="text"
+                  className={styles.logoutBtn}
+                  aria-label="Log out"
+                  icon={<CloseCircleFilled className={styles.userAlert} aria-hidden />}
+                  onClick={handleLogout}
+                />
                 <Text ellipsis className={styles.userEmail}>
                   tushar@chipsairex.com
                 </Text>

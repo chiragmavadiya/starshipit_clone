@@ -155,6 +155,16 @@
   max-width: 220px;
 }
 
+.logoutBtn {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
 .userAlert {
   color: #ff4d4f;
   font-size: 18px;

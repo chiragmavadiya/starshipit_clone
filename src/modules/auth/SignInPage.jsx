@@ -1,22 +1,32 @@
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom'
 import { Button, Checkbox, Form, Input, message } from 'antd'
 import BrandLogo from '../../components/BrandLogo.jsx'
 import FormDivider from '../../components/FormDivider.jsx'
 import SocialCircleButtons from '../../components/SocialCircleButtons.jsx'
 import CopyrightFooter from '../../layouts/CopyrightFooter.jsx'
 import { ROUTES } from '../../configuration/routes.js'
-import { signIn } from './authService.js'
+import { isAuthenticated, signIn } from './authService.js'
 import styles from './SignInPage.module.css'
 
 export default function SignInPage() {
   const [form] = Form.useForm()
   const navigate = useNavigate()
+  const location = useLocation()
+  const rawFrom = location.state?.from?.pathname
+  const from =
+    typeof rawFrom === 'string' && rawFrom.startsWith('/') && !rawFrom.startsWith('//')
+      ? rawFrom
+      : ROUTES.dashboard
+
+  if (isAuthenticated()) {
+    return <Navigate to={from} replace />
+  }
 
   const onFinish = async (values) => {
     try {
       await signIn(values)
       message.success('Signed in (demo)')
-      navigate(ROUTES.dashboard, { replace: true })
+      navigate(from, { replace: true })
     } catch {
       message.error('Something went wrong')
     }

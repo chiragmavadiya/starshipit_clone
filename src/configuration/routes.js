@@ -1,6 +1,6 @@
 export const ROUTES = {
   /** Main app (orders dashboard) */
-  dashboard: '/',
-  signIn: '/signin',
+  dashboard: '/orders',
+  signIn: '/',
   signUp: '/signup',
 }
