@@ -1,0 +1,254 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f5f6f8;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 14px 24px;
+  background: #fff;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.toolbarLeft,
+.toolbarRight {
+  display: flex;
+  align-items: center;
+}
+
+.selectView {
+  min-width: 140px;
+}
+
+.filterInput {
+  width: 220px;
+  max-width: 40vw;
+  border-radius: 6px;
+}
+
+.filterIcon {
+  color: #8c8c8c;
+}
+
+.toolbarLink {
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.04em;
+  color: #0072ce !important;
+  padding: 0 4px !important;
+  height: auto !important;
+}
+
+.outlineBtn {
+  border-color: #0072ce !important;
+  color: #0072ce !important;
+  font-weight: 500;
+  border-radius: 6px !important;
+}
+
+.outlineBtn:hover {
+  color: #005fa3 !important;
+  border-color: #005fa3 !important;
+}
+
+.chev {
+  font-size: 10px;
+  margin-left: 4px;
+  opacity: 0.85;
+}
+
+.tableCard {
+  flex: 1;
+  margin: 16px 24px 24px;
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.ordersTable {
+  flex: 1;
+}
+
+.ordersTable :global(.ant-table-thead > tr > th) {
+  background: #fafafa !important;
+  color: #8c8c8c !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-bottom: 1px solid #e8e8e8 !important;
+  padding: 14px 16px !important;
+}
+
+.ordersTable :global(.ant-table-tbody > tr > td) {
+  padding: 14px 16px !important;
+  border-bottom: 1px solid #f0f0f0 !important;
+}
+
+.ordersTable :global(.ant-table-tbody > tr:hover > td) {
+  background: #fafafa !important;
+}
+
+.sortHint {
+  opacity: 0.5;
+  font-weight: 400;
+  margin-left: 4px;
+}
+
+.orderNoCell {
+  align-items: center;
+}
+
+.iconBtn {
+  color: #0072ce !important;
+  padding: 0 !important;
+  width: 28px;
+  min-width: 28px !important;
+  height: 28px;
+}
+
+.orderDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #0072ce;
+  display: inline-block;
+}
+
+.orderLink {
+  color: #0072ce;
+  font-weight: 500;
+}
+
+.orderLink:hover {
+  text-decoration: underline;
+}
+
+.customerOk {
+  color: #52c41a;
+  font-size: 16px;
+}
+
+.carrierCell {
+  align-items: center;
+}
+
+.carrierMark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 28px;
+  height: 22px;
+  padding: 0 6px;
+  background: #e31e24;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 800;
+  border-radius: 2px;
+  letter-spacing: 0.02em;
+}
+
+.gearHead {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.gearBtn {
+  color: #0072ce !important;
+}
+
+.printBtn {
+  background: #009e60 !important;
+  border-color: #009e60 !important;
+  font-weight: 700 !important;
+  font-size: 12px !important;
+  letter-spacing: 0.06em;
+  height: 32px !important;
+  padding: 0 12px !important;
+  border-radius: 6px !important;
+}
+
+.printBtn:hover {
+  filter: brightness(1.05);
+}
+
+.moreBtn {
+  width: 32px;
+  padding: 0 !important;
+  border-radius: 6px !important;
+}
+
+.tableFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 12px 16px;
+  border-top: 1px solid #e8e8e8;
+  background: #fff;
+}
+
+.pager {
+  align-items: center;
+}
+
+.pageIconBtn {
+  color: #8c8c8c !important;
+}
+
+.pageNumActive {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #0072ce;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.pageSizeBlock {
+  align-items: center;
+}
+
+.pageSizeLabel {
+  font-size: 13px;
+  color: #595959;
+}
+
+.pageSizeSelect {
+  width: 72px;
+}
+
+.rangeText {
+  font-size: 13px;
+  color: #595959;
+  margin-left: auto;
+}
+
+@media (max-width: 991px) {
+  .topBarRight {
+    margin-left: 0;
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .statusNav {
+    order: 3;
+    width: 100%;
+    justify-content: flex-start;
+  }
+}

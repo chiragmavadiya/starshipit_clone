@@ -1,0 +1,80 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--ss-bg);
+  padding: 48px 16px 72px;
+}
+
+.card {
+  width: 100%;
+  max-width: 450px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+}
+
+.cardInner {
+  padding: 48px 44px 40px;
+}
+
+@media (max-width: 575.98px) {
+  .cardInner {
+    padding: 32px 22px 28px;
+  }
+}
+
+.logoCenter {
+  display: block;
+  text-align: center;
+  margin: 0 auto 32px;
+}
+
+.form {
+  margin-top: 0;
+}
+
+.optionsRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.forgot {
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.forgot:hover {
+  text-decoration: underline;
+}
+
+.loginBtn {
+  background: var(--ss-green) !important;
+  border-color: var(--ss-green) !important;
+  font-weight: 700 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  height: 48px !important;
+  font-size: 14px !important;
+}
+
+.loginBtn:hover {
+  filter: brightness(1.05);
+}
+
+.register {
+  text-align: center;
+  margin: 28px 0 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.register a {
+  font-weight: 600;
+}

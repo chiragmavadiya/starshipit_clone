@@ -1,0 +1,60 @@
+/** Demo rows matching Starshipit-style orders table */
+export const MOCK_ORDERS = [
+  {
+    key: '1',
+    orderNo: '4922',
+    orderDate: '16/03/26 08:12 pm',
+    customer: 'Acme Retail Pty Ltd',
+    items: 'No items',
+    country: 'Australia',
+    carrierCode: 'P',
+    carrierLabel: 'P - Parcel',
+  },
+  {
+    key: '2',
+    orderNo: '4921',
+    orderDate: '16/03/26 07:45 pm',
+    customer: 'Mountain Culture',
+    items: 'No items',
+    country: 'Australia',
+    carrierCode: 'AP',
+    carrierLabel: '3D05 - PARCEL POST + SIGNATURE',
+  },
+  {
+    key: '3',
+    orderNo: '4920',
+    orderDate: '16/03/26 06:20 pm',
+    customer: 'Showpo.',
+    items: 'No items',
+    country: 'Australia',
+    carrierCode: 'P',
+    carrierLabel: 'P - Parcel',
+  },
+  {
+    key: '4',
+    orderNo: '4919',
+    orderDate: '16/03/26 05:10 pm',
+    customer: 'Toyworld NZ',
+    items: 'No items',
+    country: 'New Zealand',
+    carrierCode: 'P',
+    carrierLabel: 'P - Parcel',
+  },
+  {
+    key: '5',
+    orderNo: '4918',
+    orderDate: '16/03/26 04:02 pm',
+    customer: 'Princess Polly',
+    items: 'No items',
+    country: 'Australia',
+    carrierCode: 'AP',
+    carrierLabel: '3D05 - PARCEL POST + SIGNATURE',
+  },
+]
+
+export const STATUS_COUNTS = {
+  new: 5,
+  printed: 108,
+  shipped: 620,
+  archived: 25,
+}

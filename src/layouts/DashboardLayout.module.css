@@ -1,0 +1,168 @@
+.root {
+  min-height: 100vh;
+  background: #f5f6f8;
+}
+
+.sider {
+  border-right: 1px solid #e8e8e8 !important;
+  box-shadow: none;
+}
+
+.sider :global(.ant-layout-sider-children) {
+  display: flex;
+  flex-direction: column;
+}
+
+.siderHead {
+  height: 48px;
+  display: flex;
+  align-items: center;
+  padding: 0 12px 0 16px;
+  border-bottom: 1px solid #f0f0f0;
+  flex-shrink: 0;
+}
+
+.trigger {
+  font-size: 18px;
+  color: #595959;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu {
+  border-inline-end: none !important;
+  flex: 1;
+  padding-top: 8px;
+}
+
+.menu :global(.ant-menu-item-selected) {
+  background: #e6f4ff !important;
+  color: #0072ce !important;
+}
+
+.menu :global(.ant-menu-item-selected .anticon) {
+  color: #0072ce !important;
+}
+
+.inner {
+  background: #f5f6f8;
+}
+
+.content {
+  min-height: 100vh;
+}
+
+.topBar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 24px;
+  background: #fff;
+  border-bottom: 1px solid #e8e8e8;
+  flex-wrap: wrap;
+}
+
+.topBarLeft {
+  flex-shrink: 0;
+}
+
+.headerLogo {
+  font-size: 1.35rem !important;
+}
+
+.statusNav {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  min-width: 200px;
+}
+
+.statusPill,
+.statusPillActive {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background: transparent;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: #595959;
+  font-family: inherit;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.statusPill:hover {
+  background: #f5f5f5;
+}
+
+.statusPillActive {
+  color: #0072ce;
+  background: #e6f4ff;
+  border-color: #91caff;
+}
+
+.countChip,
+.countChipActive {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+  height: 22px;
+  padding: 0 8px;
+  border-radius: 11px;
+  font-size: 11px;
+  font-weight: 600;
+  background: #e8e8e8;
+  color: #595959;
+}
+
+.countChipActive {
+  background: #0072ce;
+  color: #fff;
+}
+
+.topBarRight {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+.headerSearch {
+  width: 200px;
+  max-width: 36vw;
+  border-radius: 6px;
+}
+
+.searchIcon {
+  color: #bfbfbf;
+}
+
+.userBlock {
+  max-width: 220px;
+}
+
+.userAlert {
+  color: #ff4d4f;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.userEmail {
+  font-size: 13px;
+  color: #262626;
+  max-width: 180px;
+}

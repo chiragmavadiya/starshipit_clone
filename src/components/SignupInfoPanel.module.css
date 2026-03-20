@@ -1,0 +1,275 @@
+.panel {
+  background: #ebf5ff;
+  min-height: 100%;
+  padding: 40px 80px 50px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  align-items: flex-start;
+  text-align: left;
+  justify-content: center;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.brand {
+  display: inline-block;
+  margin: 0;
+}
+
+.headline {
+  font-size: 27px;
+  font-weight: 500;
+  color: #1f1f1f;
+  line-height: 1.45;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.featureRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 0;
+  row-gap: 8px;
+  max-width: 100%;
+}
+
+.featureChunk {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.featureStar {
+  flex-shrink: 0;
+  margin-right: 2px;
+}
+
+.featureText {
+  font-size: 12px;
+  font-weight: 500;
+  color: #0072ce;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 440px;
+}
+
+.listItem {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #4a4a4a;
+}
+
+.check {
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.footer {
+  margin-top: 100px;
+  width: 100%;
+  padding-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.proofTitle {
+  font-size: 14px;
+  font-weight: 700;
+  color: #2c2c2c;
+  line-height: 1.45;
+  margin: 0;
+  max-width: 400px;
+}
+
+.carousel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 100%;
+}
+
+.arrow {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid #d0dae6;
+  background: rgba(255, 255, 255, 0.85);
+  color: #9aa8b8;
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.arrow:hover {
+  background: #fff;
+  color: #6b7c90;
+}
+
+.carouselWrap {
+  flex: 1;
+  min-width: 0;
+  min-height: 48px;
+}
+
+.antCarousel {
+  width: 100%;
+}
+
+.carouselWrap :global(.ant-carousel .slick-list) {
+  margin: 0;
+}
+
+.carouselWrap :global(.ant-carousel .slick-slide > div) {
+  outline: none;
+}
+
+.slideInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px 14px;
+  flex-wrap: wrap;
+  min-height: 48px;
+  padding: 4px 2px;
+}
+
+.logoTextBlue {
+  font-weight: 600;
+  font-size: 13px;
+  color: #5a7a9a;
+  letter-spacing: 0.04em;
+  flex-shrink: 0;
+}
+
+.logoTextBlueWide {
+  font-weight: 700;
+  font-size: 11px;
+  color: #5a7a9a;
+  letter-spacing: 0.08em;
+  flex-shrink: 0;
+}
+
+.logoShowpo {
+  font-weight: 600;
+  font-size: 15px;
+  color: #0072ce;
+  letter-spacing: 0.02em;
+  flex-shrink: 0;
+}
+
+.logoZoraida {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.05;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: 600;
+  font-size: 11px;
+  color: #0072ce;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+
+.zoraidaSub {
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  margin-top: 2px;
+  opacity: 0.92;
+}
+
+.logoLskd {
+  background: #0072ce;
+  color: #fff;
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  padding: 8px 12px;
+  line-height: 1;
+  flex-shrink: 0;
+  font-family: var(--font-sans, 'Inter', sans-serif);
+}
+
+.logoCulture {
+  font-weight: 600;
+  font-size: 14px;
+  color: #0072ce;
+  letter-spacing: -0.02em;
+  flex-shrink: 0;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: baseline;
+}
+
+.cultureCwrap {
+  position: relative;
+  display: inline-block;
+  font-weight: 700;
+}
+
+.crown {
+  position: absolute;
+  left: 50%;
+  bottom: 100%;
+  transform: translateX(-50%);
+  margin-bottom: -2px;
+  font-size: 8px;
+  line-height: 1;
+  color: #0072ce;
+  opacity: 0.95;
+}
+
+@media (max-width: 991.98px) {
+  .panel {
+    padding: 28px 20px 36px;
+    gap: 22px;
+  }
+
+  .featureRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .featureChunk {
+    gap: 8px;
+  }
+
+  /* Stack: star prefix on mobile reads as bullet list */
+  .featureChunk:not(:first-child) .featureStar {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 400px) {
+  .slideInner {
+    justify-content: center;
+  }
+}
